@@ -5,6 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\styles.css" />
+    <None Remove="libwkhtmltox.dll" />
+    <None Remove="libwkhtmltox.dylib" />
+    <None Remove="libwkhtmltox.so" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libwkhtmltox.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libwkhtmltox.dylib" />
+    <Content Include="libwkhtmltox.so" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
