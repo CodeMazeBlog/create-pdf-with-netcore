@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using DinkToPdf;
+﻿using DinkToPdf;
 using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using PDF_Generator.Utility;
+using System.IO;
 
 namespace PDF_Generator.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/pdfcreator")]
     [ApiController]
     public class PdfCreatorController : ControllerBase
     {
@@ -37,8 +33,8 @@ namespace PDF_Generator.Controllers
             var objectSettings = new ObjectSettings
             {
                 PagesCount = true,
-                HtmlContent = TemplateGenerator.GetHTMLString(),
-                //Page = "https://code-maze.com/", USE THIS PROPERTY TO GENERATE PDF CONTENT FROM AN HTML PAGE
+                //HtmlContent = TemplateGenerator.GetHTMLString(),
+                Page = "https://code-maze.com/", //USE THIS PROPERTY TO GENERATE PDF CONTENT FROM AN HTML PAGE
                 WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "styles.css") },
                 HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Page [page] of [toPage]", Line = true },
                 FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Report Footer" }
@@ -55,9 +51,8 @@ namespace PDF_Generator.Controllers
             var file = _converter.Convert(pdf);
 
             //return Ok("Successfully created PDF document.");
-            //return File(file, "application/pdf", "EmployeeReport.pdf"); //USE THIS RETURN STATEMENT TO DOWNLOAD GENERATED PDF DOCUMENT
+            //return File(file, "application/pdf", "EmployeeReport.pdf");
             return File(file, "application/pdf");
-
         }
     }
 }

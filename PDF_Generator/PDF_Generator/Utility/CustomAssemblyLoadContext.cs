@@ -13,7 +13,7 @@ namespace PDF_Generator.Utility
         {
             return LoadUnmanagedDll(absolutePath);
         }
-        protected override IntPtr LoadUnmanagedDll(String unmanagedDllName)
+        protected override IntPtr LoadUnmanagedDll(string unmanagedDllName)
         {
             return LoadUnmanagedDllFromPath(unmanagedDllName);
         }
