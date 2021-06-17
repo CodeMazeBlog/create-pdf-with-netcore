@@ -1,13 +1,4 @@
 ﻿{
-  "$schema": "http://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:65151",
-      "sslPort": 44381
-    }
-  },
   "profiles": {
     "PDF_Generator": {
       "commandName": "Project",
